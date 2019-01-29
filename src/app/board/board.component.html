@@ -1,0 +1,35 @@
+<div>
+  <div class="board-row">
+
+    <!-- board is parent -->
+    <!-- square is child -->
+    <!-- square is property binding expression , must declare input property -->
+
+    <app-square [id]="0" [sqvalue]="squares[0]" (onClicked)="onClicked($event)"></app-square>
+    <app-square [id]="1" [sqvalue]="squares[1]" (onClicked)="onClicked($event)"></app-square>
+    <app-square [id]="2" [sqvalue]="squares[2]" (onClicked)="onClicked($event)"></app-square>
+  </div>
+
+  <div class="board-row">
+    <app-square [id]="3" [sqvalue]="squares[3]" (onClicked)="onClicked($event)"></app-square>
+    <app-square [id]="4" [sqvalue]="squares[4]" (onClicked)="onClicked($event)"></app-square>
+    <app-square [id]="5" [sqvalue]="squares[5]" (onClicked)="onClicked($event)"></app-square>
+  </div>
+
+  <div class="board-row">
+    <app-square [id]="6" [sqvalue]="squares[6]" (onClicked)="onClicked($event)"></app-square>
+    <app-square [id]="7" [sqvalue]="squares[7]" (onClicked)="onClicked($event)"></app-square>
+    <app-square [id]="8" [sqvalue]="squares[8]" (onClicked)="onClicked($event)"></app-square>
+  </div>
+</div>
+
+<div>
+  <h2 *ngIf="!winner">Next Player: {{nextPlayer}} </h2>
+  <h2 *ngIf="winner">Winner: {{winner}} </h2>
+</div>
+
+<div>
+  <li *ngFor="let item of history; index as i">
+    <u><a (click)="selectHistory(i)">Move #{{i}}</a></u>
+  </li>
+</div>
